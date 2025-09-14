@@ -323,11 +323,6 @@ img {
     fill: #f4f4fd;
 }
 
-.team-social {
-    flex-direction: row;
-    margin: 8px 16px 0;
-}
-
 .team-link {
     display: flex;
     justify-content: center;
@@ -502,15 +497,6 @@ img {
 .social-links-item {
     width: 40px;
     height: 40px;
-}
-
-.social-links {
-    display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-        gap: 16px;
-        margin: 16px 0 0 0;
 }
 
 .icon-link {
