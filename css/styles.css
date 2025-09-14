@@ -131,8 +131,8 @@ img {
     align-items: center;
     gap: 40px;
     margin-right: auto;
-    padding: 24px 0 24px;
 }
+
 
 .header-menu-link {
     font-weight: 500;
@@ -141,10 +141,30 @@ img {
     letter-spacing: 0.02em;
     color: #2e2f42;
     padding: 24px 0 24px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-menu-link.header-line {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-menu-link.header-line::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background-color: #4d5ae5;
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
 }
 
 .header-menu-link:hover,
-.header-menu-link:focus {
+.header-menu-link:focus,
+.header-menu-link.header-link-line {
     color: #404bbf;
 }
 
@@ -162,7 +182,8 @@ img {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    color: #434455
+    color: #434455;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-contacts-link:hover,
@@ -178,7 +199,12 @@ img {
 
 .main-hero {
     background-color: #2e2f42;
-    padding: 188px 0 188px
+    padding: 188px 0 188px;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7)),url("../images/people-office\ 1.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 
 .main-hero-title {
@@ -203,6 +229,8 @@ img {
     height: 56px;
     border: none;
     border-radius: 4px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
@@ -224,6 +252,16 @@ img {
 
 .mission-item {
     width: calc((100% - 24px) / 4);
+}
+
+.mission-icon {
+    border: 1px solid #8E8F99;
+    border-radius: 4px;
+    width: 264px;
+    height: 112px;
+    background-color: #f4f4fd;
+    padding: 24px 100px;
+    margin-bottom: 8px;
 }
 
 .mission-title {
@@ -251,6 +289,36 @@ img {
     background-color: #ffffff;
     width: calc((100% - 3 * 24px) / 4);
     border-radius: 0px 0px 4px 4px;
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-item:hover {
+    background-color: #FCFCFC;
+}
+
+.team-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 24px;
+    margin: 8px 16px 0;
+}
+
+.team-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4D5AE5;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-link:hover {
+    background-color: #404BBF;
 }
 
 .team-list {
@@ -258,7 +326,6 @@ img {
     gap: 24px;
     justify-content: center;
     flex-wrap: wrap;
-    
 }
 
 .team-info {
@@ -282,6 +349,7 @@ img {
     color: #434455;
     text-align: center;
 }
+
 
 
 /* ---------PORTFOLIO---------- */
@@ -308,8 +376,34 @@ img {
 
 .portfolio-item {
     width: calc((100% - 2 * 24px) /3);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.portfolio-item:hover .portfolio-item-text {
+    transform: translateY(0);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover {
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+
+}
+
+.portfolio-item-cover {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-item-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #4D5AE5;
+    color: #f4f4fd;
+    padding: 40px 32px;
+    height: 100%;
+    transform: translateY(100%);
+}
 .portfolio-subtitle {
     color: #2e2f42;
     margin-bottom: 8px;
@@ -328,6 +422,10 @@ img {
     background-color: #2e2f42;
     padding-top: 100px;
     padding-bottom: 100px;
+}
+
+.footer-wrapper {
+            display: flex;
 }
 
 .footer-link {
@@ -349,4 +447,41 @@ img {
 .footer-text {
     color: #f4f4fd;
     max-width: 264px;
+}
+
+.footer-social {
+    max-width: 280px;
+    margin-left: 120px;
+}
+
+.footer-subtitle {
+    font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: #ffffff;
+}
+
+.social-links {
+    display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 16px;
+        margin: 16px 0 0 0;
+}
+
+.icon-link {
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #4D5AE5;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-link:hover {
+    background-color: #31D0AA;
 }
